@@ -1,0 +1,233 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+i {
+  font-family: "boxicons" !important;
+  font-weight: normal !important;
+}
+
+body {
+  background-color: #222;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.search-user {
+  padding: 15px;
+  background-color: #333;
+  border-radius: 20px;
+}
+#githubUsername {
+  padding: 10px;
+  color: white;
+  font-size: 1rem;
+  border-radius: 15px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+#searchBtn {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #333;
+  border: none;
+  outline: none;
+  border-radius: 9px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+#searchBtn:active {
+  scale: 0.9;
+}
+#githubUsername::placeholder {
+  font-size: 1rem;
+}
+.card {
+  background-color: #333;
+  padding: 1rem;
+  border-radius: 15px;
+  width: 700px;
+  display: none;
+}
+.basic-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.personal-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.profileAvatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.personal-info h1 {
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.9rem;
+  text-transform: capitalize;
+}
+.username {
+  padding: 4px 10px;
+  border-radius: 30px;
+  border: 2px solid #444;
+  width: fit-content;
+}
+.follow-link {
+  text-decoration: none;
+  color: white;
+  padding: 5px 20px;
+  font-size: 1rem;
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+}
+box-icon {
+  fill: white;
+  height: 30px;
+  width: 30px;
+  transition: 0.3s;
+}
+hr {
+  margin: 20px 0;
+  border-color: gray;
+}
+.connections {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.connections a {
+  padding: 10px 14px;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  text-align: center;
+  max-width: 50%;
+  background-color: #444;
+  border-radius: 10px;
+  min-width: 30%;
+  text-decoration: none;
+}
+.connections a:hover {
+  text-decoration: underline;
+}
+.repos {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.repos:hover {
+  text-decoration: underline;
+}
+.repos:hover box-icon {
+  transform: translateX(10px);
+}
+.repo-info .heading {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+.repo-info p {
+  color: lightgray;
+}
+.error-container {
+  text-align: center;
+  background-color: #ff4d4d; /* Red error background */
+  color: white; /* White text */
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none;
+}
+
+.error-container h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.error-container p {
+  font-size: 16px;
+  margin-top: 5px;
+}
+@media (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+  .personal-info h1 {
+    font-size: 1.5rem;
+  }
+  .basic-info {
+    flex-direction: column;
+    align-items: center;
+  }
+  .personal-info div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .personal-info {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+  .follow-link {
+    margin-top: 20px;
+  }
+}
+@media (prefers-color-scheme: light) {
+  * {
+    color: black;
+  }
+  .container {
+    background-color: #ddd;
+  }
+  .search-user {
+    background-color: #ccc;
+  }
+  #searchBtn {
+    background-color: #ccc;
+  }
+  #githubUsername {
+    color: black;
+  }
+  .card {
+    background-color: #ccc;
+  }
+  .follow-link {
+    background-color: #ccc;
+  }
+  box-icon {
+    fill: black;
+  }
+  .connections a {
+    background-color: #bbb;
+  }
+  .repo-info p {
+    color: black;
+  }
+}
